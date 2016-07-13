@@ -8,17 +8,27 @@ read DESCRIPTION
 echo "Please enter the author's name: "
 read AUTHOR
 
-sed -i -e "s/CyStore/$NAME/g" package.json webpack.config.js src/CyStore.js
+sed "s/CyComponent/$NAME/g" package.json > p.new
+mv p.new package.json
 
-sed -i -e "s/sample_name/$REGISTRATION/g" src/CyStore.js
+sed "s/CyComponent/$NAME/g" webpack.config.js > w.new
+mv w.new webpack.config.js
+
+sed "s/CyComponent/$NAME/g" src/CyStore.js > c.new
+mv c.new src/CyStore.js
+
+sed "s/sample_name/$REGISTRATION/g" src/CyStore.js > c.new
+mv c.new src/CyStore.js
 
 mv src/CyStore.js src/${NAME}.js
 
 mv ../CyStoreScaffold ../$NAME
 
-sed -i -e "s/DESCRIPTION/$DESCRIPTION/g" package.json
+sed "s/DESCRIPTION/$DESCRIPTION/g" package.json > p.new
+mv p.new package.json
 
-sed -i -e "s/AUTHOR/$AUTHOR/g" package.json
+sed "s/AUTHOR/$AUTHOR/g" package.json > p.new
+mv p.new package.json
 
 echo "Removing git source control for this repo..."
 echo ""
