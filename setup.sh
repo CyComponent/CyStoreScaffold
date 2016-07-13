@@ -8,13 +8,13 @@ read DESCRIPTION
 echo "Please enter the author's name: "
 read AUTHOR
 
-sed "s/CyComponent/$NAME/g" package.json > p.new
+sed "s/CyStore/$NAME/g" package.json > p.new
 mv p.new package.json
 
-sed "s/CyComponent/$NAME/g" webpack.config.js > w.new
+sed "s/CyStore/$NAME/g" webpack.config.js > w.new
 mv w.new webpack.config.js
 
-sed "s/CyComponent/$NAME/g" src/CyStore.js > c.new
+sed "s/CyStore/$NAME/g" src/CyStore.js > c.new
 mv c.new src/CyStore.js
 
 sed "s/sample_name/$REGISTRATION/g" src/CyStore.js > c.new
